@@ -2,3 +2,4 @@ langchain_core
 langchain_openai
 streamlit
 python-dotenv
+langchain_community
