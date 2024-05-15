@@ -2,3 +2,9 @@ langchain_core
 langchain_openai
 streamlit
 python-dotenv
+fastapi
+langserve
+sse_starlette
+anthropic
+langchain-openai
+langchain-anthropic
