@@ -8,3 +8,12 @@ langchain-openai
 langchain-anthropic
 jupyter notebook
 bs4
+pypdf
+chromadb
+groq
+cassio
+beautifulsoup4
+langchain-groq
+wikipedia
+arxiv
+langchainhub
