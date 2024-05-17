@@ -6,7 +6,6 @@ sse_starlette
 anthropic
 langchain-openai
 langchain-anthropic
-jupyter notebook
 bs4
 pypdf
 chromadb
