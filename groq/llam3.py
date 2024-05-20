@@ -8,6 +8,7 @@ from langchain_community.llms import ChatGroq
 from langchain_community.embeddings import OpenAIEmbeddings
 from dotenv import load_dotenv
 import os
+import time
 load_dotenv()
 
 # load the GROQ and OPENAI API keys
@@ -28,8 +29,17 @@ prompt = ChatPromptTemplate.from_template(
     """
 )
 
-if  st.button("Document Embedding"):
+def vector_embedding():
     st.session_state.embeddings = OpenAIEmbeddings()
     st.session_state.text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-    st.session_state.loader = PyPDFDirectoryLoader("./research_paper")
+    st.session_state.documents = PyPDFDirectoryLoader("./research_paper")
+    st.session_state.final_documents = st.session_state.text_splitter.split_documents(st.session_state.documents)
+    st.session_state.vectors = FAISS.from_documents(st.session_state.final_documents, st.session_state.embeddings)
+
+
+if  st.button("Document Embedding"):
+    vector_embedding()
+    st.write("Vector Embedding Done")
+
+    
 
