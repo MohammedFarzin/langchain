@@ -22,3 +22,4 @@ ragstack-ai
 datasets
 langchain-astradb
 objectbox
+langchain_objectbox
